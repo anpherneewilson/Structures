@@ -6,3 +6,11 @@
     (else (find-min (cdr L)))
     )
   )
+
+(define (remove-non-numbers L)
+  (cond
+    ((null? L) '())
+    ((integer? (car L)) (append (car L) (remove-non-numbers (cdr L))))
+    (else (remove-non-numbers (cdr L)))
+    )
+  )
