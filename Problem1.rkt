@@ -2,6 +2,6 @@
   (if
     (null? L)
     '()
-    (list (reverse-general (cdr L)) (list (car L)))
+    (append (reverse-general (cdr L)) (list (car L)))
     )
   )
