@@ -1,3 +1,6 @@
 (define (reverse-general L)
   (cond
-    ((null? L) ())
+    ((null? L) '())
+    (cons ((reverse-general L) (car L)))
+    )
+  )
