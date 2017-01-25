@@ -7,10 +7,11 @@
     )
   )
 
-(define (remove-non-numbers L)
+(define (remove-unwanted-items L n)
   (cond
     ((null? L) '())
-    ((integer? (car L)) (append (car L) (remove-non-numbers (cdr L))))
-    (else (remove-non-numbers (cdr L)))
+    ((integer? (car L)) (if (> (car L) n) (append (list (car L)) (remove-unwanted-items (cdr L))) (remove-unwanted-items (cdr L))))
+    (else (remove-unwanted-items (cdr L)))
     )
   )
+
