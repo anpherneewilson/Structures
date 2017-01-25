@@ -10,8 +10,8 @@
 (define (remove-unwanted-items L n)
   (cond
     ((null? L) '())
-    ((integer? (car L)) (if (> (car L) n) (append (list (car L)) (remove-unwanted-items (cdr L))) (remove-unwanted-items (cdr L))))
-    (else (remove-unwanted-items (cdr L)))
+    ((integer? (car L)) (if (> (car L) n) (append (list (car L)) (remove-unwanted-items (cdr L) n)) (remove-unwanted-items (cdr L) n)))
+    (else (remove-unwanted-items (cdr L) n))
     )
   )
 
