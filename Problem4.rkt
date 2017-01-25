@@ -15,3 +15,10 @@
     )
   )
 
+(define (min-above-min L1 L2)
+  (cond
+    ((null? (remove-unwanted-items L1 0)) #f)
+    ((null? (remove-unwanted-items L2 0)) (find-min (remove-unwanted-items L1 0)))
+    (else (find-min (remove-unwanted-items L1 (find-min (remove-unwanted-items L2 0)))))
+    )
+  )
